@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('chat_id')->unique();
-            $table->boolean('is_admin')->default(0);
-            $table->timestamps();
+        Schema::create('dish_order', function (Blueprint $table) {
+            $table->integer('order_id')->unique();
+            $table->integer('dish_id')->unique();
+            $table->integer('quantity')->unsigned();
         });
     }
 
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('dish_order');
     }
 };
