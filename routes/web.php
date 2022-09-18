@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use SergiX44\Nutgram\Nutgram;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/set', function (Nutgram $bot) {
+    $response = $bot->sendMessage('test', ['chat_id' => $_ENV['TELEGRAM_CHAT_ID']]);
 });

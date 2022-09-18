@@ -1,8 +1,11 @@
 <?php
 
 use App\Http\Controllers\DishController;
+use App\Http\Controllers\FrontController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
+use SergiX44\Nutgram\Nutgram;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +20,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/test', [DishController::class, 'store']);
 Route::get('/menu', [DishController::class, 'index']);
+Route::post('/webhook', FrontController::class);

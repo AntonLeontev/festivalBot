@@ -15,8 +15,10 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('chat_id')->unique();
-            $table->boolean('is_admin')->default(0);
+            $table->string('telegram_id')->unique();
+            $table->string('username')->nullable();
+            $table->string('first_name')->nullable();
+            $table->integer('permissions')->default(0);
             $table->timestamps();
         });
     }
