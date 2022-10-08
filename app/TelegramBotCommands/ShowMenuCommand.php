@@ -12,7 +12,7 @@ class ShowMenuCommand
 		$dishes = Dish::all();
 		$text = '';
 		foreach ($dishes as $dish) {
-			$text .= sprintf('%s - %sр' . PHP_EOL, $dish->name, $dish->price);
+			$text .= sprintf('%s. %s - %sр' . PHP_EOL, $dish->id, $dish->name, $dish->price);
 		}
 		$bot->sendMessage($text);
 	}

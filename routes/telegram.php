@@ -4,6 +4,8 @@
 
 use App\TelegramBotCommands\StartCommand;
 use App\TelegramBotCommands\AddDishConversation;
+use App\TelegramBotCommands\ChooseColorConversation;
+use App\TelegramBotCommands\EditDishConversation;
 use App\TelegramBotCommands\ShowMenuCommand;
 use SergiX44\Nutgram\Nutgram;
 
@@ -19,6 +21,7 @@ use SergiX44\Nutgram\Nutgram;
 
 $bot->onCommand('start', StartCommand::class)->description('The start command!');
 $bot->onCommand('addDish', AddDishConversation::class)->description('Добавить блюдо в меню');
+$bot->onCommand('editDish', EditDishConversation::class)->description('Редактировать блюдо');
 $bot->onCommand('showMenu', ShowMenuCommand::class)->description('Показать меню');
 
 $bot->fallback(function (Nutgram $bot) {

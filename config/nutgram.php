@@ -9,7 +9,7 @@ return [
 
     // Extra or specific configurations
     'config' => [
-        'split_long_messages' => true,
+        'split_long_messages' => false,
     ],
 
     // Set if the service provider should automatically load
